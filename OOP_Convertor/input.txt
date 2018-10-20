@@ -1,0 +1,6 @@
+apple 23.5
+lolypop 87.9
+book 2999.5
+grn 1.2
+2
+dsa
