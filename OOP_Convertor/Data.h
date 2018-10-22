@@ -9,5 +9,6 @@ public:
 	Data(std::string const &, double);
 	std::string getProductName() const;
 	double getPrice() const;
+	Data convert(double);
 };
 

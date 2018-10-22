@@ -14,3 +14,8 @@ double Data::getPrice() const
 {
 	return price;
 }
+
+Data Data::convert(double _course)
+{
+	return Data(productName, _course);
+}

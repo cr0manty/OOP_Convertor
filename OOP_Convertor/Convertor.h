@@ -8,7 +8,7 @@ class Convertor
 	std::string input;
 	std::string output;
 	std::vector<Data*> data;
-	double convert(double);
+	Data convert(std::string,double);
 	void newData();
 	
 public:
