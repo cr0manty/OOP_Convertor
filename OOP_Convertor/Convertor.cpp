@@ -29,12 +29,9 @@ void Convertor::convert()
 void Convertor::newData()
 {
 	std::vector<Data>::iterator it = FileManip::data.begin();
-	std::transform(it, FileManip::data.end(), FileManip::data.begin(), convert(*it));
-}
-
-Data Convertor::convert(Data & _data)
-{
-	_data.convert(course);
-	return _data;
+	std::transform(it, FileManip::data.end(), FileManip::data.begin(), [](Data&_data,double course) {
+		_data.convert(course);
+		return _data;
+	});
 }
 
