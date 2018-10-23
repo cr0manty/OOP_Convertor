@@ -10,7 +10,7 @@ Convertor::Convertor(int argc, char** argv)
 		if (!strlen(argv[i]))
 			throw std::logic_error(Messages::EmptyArguments);
 
-	FileManip::getInfo(argv[1], argv[2]);
+	FileManip::_setinfo(argv[1], argv[2]);
 
 	if (std::stod(argv[3]) <= 0)
 		throw std::logic_error(Messages::CourseMustBeNum);
@@ -21,12 +21,12 @@ Convertor::Convertor(int argc, char** argv)
 void Convertor::convert()
 {
 	FileManip::ReadData();
-	newData();
+	_convertdata();
 	FileManip::WriteData();
 	throw std::logic_error(Messages::SuccesfulConvert);
 }
 
-void Convertor::newData()
+void Convertor::_convertdata()
 {
 	std::vector<Data>::iterator it = FileManip::data.begin();
 	std::transform(it, FileManip::data.end(), FileManip::data.begin(), [](Data&_data,double course) {

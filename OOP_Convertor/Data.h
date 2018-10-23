@@ -7,8 +7,8 @@ class Data
 	double price;
 public:
 	Data(std::string, double);
-	std::string getProductName() const;
-	double getPrice() const;
+	std::string _getname() const;
+	double _getprice() const;
 	Data convert(double);
 };
 

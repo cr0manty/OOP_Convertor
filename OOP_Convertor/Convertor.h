@@ -4,7 +4,7 @@
 class Convertor : private FileManip
 {
 	double course;
-	void newData();
+	void _convertdata();
 public:
 
 	Convertor(int, char**);

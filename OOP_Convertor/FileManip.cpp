@@ -41,7 +41,7 @@ void FileManip::createData(std::string _line)
 	data.push_back(DataBuff);
 }
 
-void FileManip::getInfo(std::string _input, std::string _output)
+void FileManip::_setinfo(std::string _input, std::string _output)
 {
 	output = _output;
 	file.open(_input, std::ios_base::in);
@@ -68,7 +68,7 @@ void FileManip::WriteData()
 		throw std::logic_error(Messages::FileDoesnExist);
 
 	for (auto i : data)
-		file << i.getProductName() << " " << i.getPrice() << std::endl;
+		file << i._getname() << " " << i._getprice() << std::endl;
 }
 
 FileManip::~FileManip()

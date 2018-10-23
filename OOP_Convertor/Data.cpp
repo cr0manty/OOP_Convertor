@@ -5,12 +5,12 @@ Data::Data(std::string _name, double _price) :
 {
 }
 
-std::string Data::getProductName() const
+std::string Data::_getname() const
 {
 	return name;
 }
 
-double Data::getPrice() const
+double Data::_getprice() const
 {
 	return price;
 }
