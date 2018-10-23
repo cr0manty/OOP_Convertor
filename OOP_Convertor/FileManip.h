@@ -6,15 +6,16 @@
 
 class FileManip
 {
-protected:
+private:
 	std::fstream file;
-	std::vector<Data*> data;
-public:
-	FileManip(std::vector<Data*>&);
-	std::vector<Data*> getData() const;
-	virtual void manip() = 0;
-	
+	std::string output;
+	void createData(std::string);
+protected:
+	FileManip() {}
+	std::vector<Data> data;
+	void getInfo(std::string, std::string);
+	FileManip(std::string, std::string);
+	void ReadData();
+	void WriteData();
 	~FileManip();
 };
-
-

@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{63CCDC19-0520-4572-AE6E-611AA066CF2E}</ProjectGuid>
+    <ProjectGuid>{94605ABA-9B9B-4378-8E64-F04D9286E6FB}</ProjectGuid>
     <RootNamespace>OOP_Convertor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -115,20 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Convertor.cpp" />
-    <ClCompile Include="Data.cpp" />
-    <ClCompile Include="FileManip.cpp" />
-    <ClCompile Include="ReadFromFile.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="WriteToFile.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Convertor.h" />
     <ClInclude Include="Data.h" />
     <ClInclude Include="FileManip.h" />
     <ClInclude Include="Messages.h" />
-    <ClInclude Include="ReadFromFile.h" />
-    <ClInclude Include="WriteToFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Convertor.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="FileManip.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

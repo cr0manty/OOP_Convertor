@@ -3,10 +3,10 @@
 
 class Data
 {
-	std::string productName;
+	std::string name;
 	double price;
 public:
-	Data(std::string const &, double);
+	Data(std::string, double);
 	std::string getProductName() const;
 	double getPrice() const;
 	Data convert(double);

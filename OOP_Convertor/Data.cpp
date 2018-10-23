@@ -1,13 +1,13 @@
 #include "Data.h"
 
-Data::Data(std::string const &_name, double _price) :
-	productName(_name), price(_price)
+Data::Data(std::string _name, double _price) :
+	name(_name), price(_price)
 {
 }
 
 std::string Data::getProductName() const
 {
-	return productName;
+	return name;
 }
 
 double Data::getPrice() const
@@ -17,5 +17,6 @@ double Data::getPrice() const
 
 Data Data::convert(double _course)
 {
-	return Data(productName, _course);
+	this->price = price * _course * 1.2;
+	return *this;
 }

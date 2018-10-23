@@ -1,19 +1,14 @@
 #pragma once
 #include "FileManip.h"
 
-class Convertor
+class Convertor : private FileManip
 {
 	double course;
-	FileManip *fileWork;
-	std::string input;
-	std::string output;
-	std::vector<Data*> data;
-	Data convert(std::string,double);
 	void newData();
-	
+	Data convert(Data&);
 public:
 
 	Convertor(int, char**);
-	void manip();
+	void convert();
 };
 
