@@ -1,18 +1,6 @@
 #include "FileManip.h"
 #include <sstream>
 
-FileManip::FileManip(std::string _input, std::string _output)
-{
-	if(_input.empty() || _output.empty())
-		throw std::logic_error(Messages::EmptyArguments);
-
-	output = _output;
-	file.open(_input, std::ios_base::in);
-
-	if (!file)
-		throw std::logic_error(Messages::FileDoesnExist);
-}
-
 void FileManip::createData(std::string _line)
 {
 	if (_line.empty())
@@ -22,23 +10,19 @@ void FileManip::createData(std::string _line)
 	std::string buffer;
 	std::string productName;
 	double price;
+
 	in >> buffer;
 	productName = buffer;
-	buffer.clear();
 
-	in >> buffer;
-	if (buffer.empty())
+	if (!(in >> buffer))
 		return;
-
 	price = std::stod(buffer);
-	buffer.clear();
 
-	in >> buffer;
-	if (!buffer.empty())
+	if (in >> buffer)
 		return;
 
-	Data DataBuff(productName, price);
-	data.push_back(DataBuff);
+	Data *_buff = new Data(productName, price);
+	data.push_back(_buff);
 }
 
 void FileManip::_setinfo(std::string _input, std::string _output)
@@ -68,11 +52,13 @@ void FileManip::WriteData()
 		throw std::logic_error(Messages::FileDoesnExist);
 
 	for (auto i : data)
-		file << i._getname() << " " << i._getprice() << std::endl;
+		file << i->_getname() << " " << i->_getprice() << std::endl;
+
+	file.close();
 }
 
 FileManip::~FileManip()
 {
-	//for (auto i : data)
-	//	delete i;
+	for (auto i : data)
+		delete i;
 }

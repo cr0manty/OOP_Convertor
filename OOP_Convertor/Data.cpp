@@ -15,8 +15,7 @@ double Data::_getprice() const
 	return price;
 }
 
-Data Data::convert(double _course)
+void Data::convert(double _course)
 {
 	this->price = price * _course * 1.2;
-	return *this;
 }

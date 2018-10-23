@@ -12,9 +12,8 @@ private:
 	void createData(std::string);
 protected:
 	FileManip() {}
-	std::vector<Data> data;
+	std::vector<Data*> data;
 	void _setinfo(std::string, std::string);
-	FileManip(std::string, std::string);
 	void ReadData();
 	void WriteData();
 	~FileManip();
