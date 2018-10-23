@@ -26,12 +26,6 @@ void Convertor::convert()
 	throw std::logic_error(Messages::SuccesfulConvert);
 }
 
-Data Convertor::_newdata(Data _data)
-{
-	_data.convert(course);
-	return _data;
-}
-
 void Convertor::_convertdata()
 {
 	std::vector<Data*> _mynewdata;
@@ -41,6 +35,3 @@ void Convertor::_convertdata()
 	});
 	data = _mynewdata;
 }
-
-
-
